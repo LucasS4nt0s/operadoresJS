@@ -18,7 +18,7 @@
 
    Calcule e exiba os 4 resultados no console.
    ========================================================================== */
-   console.log("-------EXERCÍCIO 1: FECHAMENTO DE VENDAS-------")
+   console.log("------- EXERCÍCIO 1: FECHAMENTO DE VENDAS -------")
 
 
    let cafe = {
@@ -41,7 +41,7 @@
 
    let faturamentoBruto = ((cafe.preco * cafe.quant) + (bolo.preco * bolo.quant));
 
-   console.log("1- Faturamento Bruto: R$", faturamentoBruto);
+   console.log("1 - Faturamento Bruto: R$", faturamentoBruto);
 
    let faturamentoLiquido = faturamentoBruto - taxaOperacional;
 
@@ -76,7 +76,7 @@
    5. O saldo do cliente cobre o valor da compra?
    ========================================================================== */
 
-   console.log("--------EXERCÍCIO 2: VALIDAÇÃO DE CADASTRO E COMPRA-------")
+   console.log("-------- EXERCÍCIO 2: VALIDAÇÃO DE CADASTRO E COMPRA -------")
 
    let idade = 17;
    let codigoDigitado = "100";
@@ -85,8 +85,19 @@
    let valorCompra = 250.00;
 
    const maioridade = 17 >= 18;
-   console.log ("O cliente atingiu a maioridade civil (18 anos)?", maioridade);
+   console.log ("1 - O cliente atingiu a maioridade civil (18 anos)?", maioridade);
 
+   const  codigoConferido = codigoDigitado == codigoBanco;
+   console.log("2 - O código digitado confere com o banco considerando apenas o valor?",codigoConferido);
+
+   const codigoConfere = codigoDigitado === codigoBanco;
+   console.log("3 - O código digitado confere com o banco considerando apenas o valor?",codigoConfere);
+
+   const codigoDifere = codigoDigitado !== codigoBanco;
+   console.log("4 - O tipo do dado digitado difere do tipo esperado no banco?", codigoDifere);
+
+   const saldoCompra = saldoDisponivel == valorCompra;
+   console.log("5 - O saldo do cliente cobre o valor da compra?", saldoCompra);
 
 
 /* ==========================================================================
@@ -110,3 +121,21 @@
    3. Acesso à área VIP: liberado para assinantes premium, ou para compras a
       partir de 300 reais que possuam cupom promocional.
    ========================================================================== */
+
+   console.log("-------- EXERCÍCIO 3: CONCESSÃO DE BENEFÍCIOS -------")
+
+   let compraValor = 220;
+   let clienteAssinante = false;
+   let cupomPromo = true;
+   let enderecoRestrito = false;
+   let clienteEstudante = true;
+   let idadeCliente = 22;
+   
+   const freteGratis = compraValor >= 200 || clienteAssinante && enderecoRestrito;
+   console.log("1 - Frete grátis:", freteGratis);
+
+   const descontoUni = idadeCliente <= 29;
+   console.log("2 - Desconto universitário:", descontoUni);
+
+   const acessoVIP = clienteAssinante || compraValor >= 300 && cupomPromo; 
+   console.log("3 - Acesso à área VIP:", acessoVIP);
